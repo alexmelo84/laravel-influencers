@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Application\CreateInfluencer;
+use App\Application\GetInfluencers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -29,5 +30,16 @@ class InfluencerController extends Controller
         $user = new CreateInfluencer($request->all());
 
         return response()->json($user->create());
+    }
+
+    /**
+     * @return JsonResponse
+     * @return JsonResponse
+     */
+    public function getInfluencers(): JsonResponse
+    {
+        $influencers = new GetInfluencers();
+
+        return response()->json($influencers->get());
     }
 }
