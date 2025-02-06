@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\InfluencerController;
 use App\Http\Controllers\JWTAuthController;
 use App\Http\Middleware\JwtMiddleware;
@@ -16,4 +17,6 @@ Route::middleware([JwtMiddleware::class])->group(function () {
 
     Route::post('/influencer', [InfluencerController::class, 'influencer']);
     Route::get('/influencers', [InfluencerController::class, 'getInfluencers']);
+
+    Route::post('/campaign', [CampaignController::class, 'create']);
 });
