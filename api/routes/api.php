@@ -19,4 +19,5 @@ Route::middleware([JwtMiddleware::class])->group(function () {
     Route::get('/influencers', [InfluencerController::class, 'getInfluencers']);
 
     Route::post('/campaign', [CampaignController::class, 'create']);
+    Route::get('/campaigns', [CampaignController::class, 'getCampaigns']);
 });

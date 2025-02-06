@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Application\CreateCampaign;
+use App\Application\GetCampaigns;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -28,5 +29,15 @@ class CampaignController extends Controller
         $campaign = new CreateCampaign($request->all());
 
         return response()->json($campaign->create());
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getCampaigns(Request $request): JsonResponse
+    {
+        $campaign = new GetCampaigns();
+        return response()->json($campaign->get());
     }
 }
