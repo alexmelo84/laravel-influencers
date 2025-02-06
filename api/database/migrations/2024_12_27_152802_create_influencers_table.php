@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_user')->constrained(table: 'users', indexName: 'id_user');
             $table->string('name')->nullable(false);
-            $table->string('instagram_user')->unique()->nullable(false)->unique();
+            $table->string('instagram_user')->unique()->nullable(false);
             $table->integer('followers')->nullable(false)->unsigned();
             $table->string('category')->nullable(false);
             $table->timestamps();
