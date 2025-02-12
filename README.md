@@ -47,3 +47,21 @@ Foi criado um *middleware* para proteger as rotas que necessitam de autenticaç�
 ```
 php artisan make:middleware JwtMiddleware
 ```
+
+## Utilização
+
+Na raíz do projeto há o arquivo *collection.json* que é a coleção do Postman com todas as rotas disponíveis.
+
+Primeiramente precisa criar um usuário pois todas as rotas só podem ser acessadas com autenticação. Na coleção acesse *User -> Criar* para criar um usuário. Na aba *Body* pode-se alterar os dados de cadastro.
+
+Após criar um usuário, precisa autenticá-lo usando a rota "User -> Login* da coleção. Na aba *Body" deve-se usar o email e senha do usuário criado anteriormente.
+
+Se tudo foi feito corretamente a resposta será o token, por exemplo:
+
+```
+{
+    "token": "tokenQualquer"
+}
+```
+
+Utilize esse token nas demais rotas usando na aba *Authorization* e o auth type *Bearer Token*.
