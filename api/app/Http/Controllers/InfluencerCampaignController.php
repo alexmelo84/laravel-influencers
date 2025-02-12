@@ -23,8 +23,8 @@ class InfluencerCampaignController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $campaign = new RelateInfluencerCampaign($request->all());
+        $influencerCampaign = new RelateInfluencerCampaign($request->all());
 
-        return response()->json($campaign->relate());
+        return response()->json($influencerCampaign->relate());
     }
 }

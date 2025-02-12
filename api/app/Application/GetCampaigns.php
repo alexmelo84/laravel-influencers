@@ -14,8 +14,8 @@ class GetCampaigns
      */
     public function get(): array
     {
-        $influencers = Campaign::all();
+        $campaigns = Campaign::with('influencers')->get();
 
-        return $influencers->toArray();
+        return $campaigns->toArray();
     }
 }
